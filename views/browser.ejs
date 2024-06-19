@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Finder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 70px;
+            padding: 10px;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100vw;
+            height: 40px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            /* Align items to the start (left) of the flex container */
+            align-items: left;
+            padding: 10px 10px;
+        }
+
+        #navbar img {
+            width: 160px;
+            height: 80px;
+
+        }
+
+
+        .logo {
+            display: inline;
+            width: 20px;
+            /* max-width: 30%; Adjust as needed */
+            /* align: left; */
+            float: left;
+            margin: 0rem 15px 15px 0px;
+            margin-top: 3rem;
+        }
+
+        body {
+            background-color: #4eacff;
+        }
+
+        #Buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            /* Add margin to separate the navbar and buttons */
+        }
+
+        .Button {
+            margin: 0 10px;
+        }
+
+        .Button a {
+            display: block;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #FFF;
+            color: #4eacff;
+            border-radius: 5px;
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        .Button a:hover {
+            background-color: #4eacff;
+            color: #FFF;
+        }
+
+        .menu_link {
+            font-size: 1.5rem;
+            margin: 0 20px;
+        }
+
+        .menu_link:hover {
+            opacity: 1;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+        #foot {
+            position: fixed;
+            /* Change to fixed for it to be at the bottom */
+            bottom: 0;
+            width: 100%;
+            margin-bottom: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+
+
+        .footer {
+            position: relative;
+            width: 100%;
+            background: #3586ff;
+            height: 85px;
+            padding: 0px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .social-icon {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            flex-wrap: wrap;
+            z-index: 1001;
+        }
+
+        .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 100px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon__item,
+        .menu__item {
+            list-style: none;
+        }
+
+        .social-icon__link {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .social-icon__link:hover {
+            transform: translateY(-10px);
+        }
+
+        .menu__link {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+            text-decoration: none;
+            opacity: 0.75;
+            font-weight: 300;
+        }
+
+        .menu__link:hover {
+            opacity: 1;
+        }
+
+        .footer p {
+            color: #fff;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url("https://i.ibb.co/wQZVxxk/wave.png");
+            background-size: 1000px 100px;
+            transform: translate(0px, 20px);
+        }
+
+        .wave#wave1 {
+            z-index: 1000;
+            opacity: 1;
+            bottom: 0;
+            animation: animateWaves 4s linear infinite;
+        }
+
+        .wave#wave2 {
+            z-index: 999;
+            opacity: 0.5;
+            bottom: 10px;
+            animation: animate 4s linear infinite !important;
+        }
+
+        .wave#wave3 {
+            z-index: 1000;
+            opacity: 0.2;
+            bottom: 15px;
+            animation: animateWaves 3s linear infinite;
+        }
+
+        .wave#wave4 {
+            z-index: 999;
+            opacity: 0.7;
+            bottom: 20px;
+            animation: animate 3s linear infinite;
+        }
+
+        @keyframes animateWaves {
+            0% {
+                background-position-x: 1000px;
+            }
+
+            100% {
+                background-positon-x: 0px;
+            }
+        }
+
+        @keyframes animate {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-positon-x: 0px;
+            }
+        }
+
+        :root {
+            --primary: #B6FFFA;
+            --secondary: #7edbfc;
+            --gradient1: #80B3FF;
+            --gradient2: #4082e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--gradient1);
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .button {
+            padding: 25px 30px;
+            background-color: #050801;
+            color: #03e9f4;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            letter-spacing: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background: #03e9f4;
+            color: #050801;
+            box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+        }
+
+        .Button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 50px;
+            margin-top: 40px;
+        }
+
+        .card {
+            margin-top: 4rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin-bottom: 2rem;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.25rem;
+            background-color: rgba(17, 24, 39, 1);
+            padding: 1.5rem;
+            transition: all 1s;
+            z-index: 1000;
+        }
+
+        .card:hover {
+            border-color: rgb(0, 0, 0);
+            box-shadow: 0px 5px 0px 5px rgb(2, 72, 138);
+
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 700;
+            color: #fff
+        }
+
+        .price {
+            font-size: 3.75rem;
+            line-height: 1;
+            font-weight: 700;
+            color: #fff
+        }
+
+        .desc {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.625;
+            color: rgba(156, 163, 175, 1);
+        }
+
+        .lists {
+            margin-bottom: 1.5rem;
+            flex: 1 1 0%;
+            color: rgba(156, 163, 175, 1);
+        }
+
+        .lists .list {
+            margin-bottom: 0.5rem;
+            display: flex;
+            margin-left: 0.5rem
+        }
+
+        .lists .list svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+            color: #4eacff;
+        }
+
+        .action {
+            border: none;
+            outline: none;
+            display: inline-block;
+            border-radius: 0.25rem;
+            background-color: #4eacff;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: rgba(17, 24, 39, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <img src="Logo.png" alt="Logo" class="logo">
+    </div>
+    <div id="Buttons">
+        <div class="card">
+            <div class="header">
+                <span class="title">Elementary</span>
+                <span class="price">Path Finder</span>
+            </div>
+            <p class="desc">Elementry Path Finder for high school students.</p>
+            <ul class="lists">
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Chossing Streams</span>
+                </li>
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Study Plan</span>
+                </li>
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Guidance</span>
+                </li>
+            </ul>
+            <a href="/class6"><button type="button" class="action">Class 6-9</button></a>
+        </div>
+
+        <div class="card">
+            <div class="header">
+                <span class="title">Professional</span>
+                <span class="price">Path Finder</span>
+            </div>
+            <p class="desc">Get a more serious outlook on professional career and after school</p>
+            <ul class="lists">
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Proffesional outlook</span>
+                </li>
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Career Choices</span>
+                </li>
+                <li class="list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Preparation Roadmap</span>
+                </li>
+            </ul>
+            <a href="/class12"><button type="button" class="action">Class 10-12</button></a>
+        </div>
+    </div>
+    <div id="foot">
+        <div class="footer">
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social-icon" style="list-style-type: none;">
+                <li class="social-icon_item" style="margin-left: 1rem;"><a class="social-icon_link" href="#">
+                        <ion-icon name="logo-facebook" style="color: #9bcffc;"></ion-icon>
+                    </a></li>
+                <li class="social-icon_item" style="margin-left: 1rem;"><a class="social-icon_link" href="#">
+                        <ion-icon name="logo-twitter" style="color: #9bcffc;"></ion-icon>
+                    </a></li>
+                <li class="social-icon_item" style="margin-left: 1rem;"><a class="social-icon_link" href="#">
+                        <ion-icon name="logo-linkedin" style="color: #9bcffc;"></ion-icon>
+                    </a></li>
+                <li class="social-icon_item" style="margin-left: 1rem;"><a class="social-icon_link" href="#">
+                        <ion-icon name="logo-instagram" style="color: #9bcffc;"></ion-icon>
+                    </a></li>
+            </ul style>
+            <ul class="menu" style="list-style-type: none;">
+                <li class="menu_item"><a class="menu_link" href="#" style="color: #9bcffc;">Home</a></li>
+                <li class="menu_item"><a class="menu_link" href="#" style="color: #9bcffc;">About</a></li>
+                <li class="menu_item"><a class="menu_link" href="#" style="color: #9bcffc;">Services</a></li>
+                <li class="menu_item"><a class="menu_link" href="#" style="color: #9bcffc;">Team</a></li>
+                <li class="menu_item"><a class="menu_link" href="#" style="color: #9bcffc;">Contact</a></li>
+
+            </ul>
+
+            </footer>
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+
+</html>

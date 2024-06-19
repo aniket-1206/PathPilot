@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .round-time-bar div {
+        height: 20px;
+        animation: roundtime calc(var(--duration) * 1s) steps(var(--duration)) forwards;
+        transform-origin: left center;
+        background: linear-gradient(0.25turn, rgb(1, 53, 1), lightgreen);
+        border: solid black 5px;
+    }
+
+    .round-time-bar[data-style="smooth"] div {
+        animation: roundtime calc(var(--duration) * 1s) linear forwards;
+        border: solid black 2px;
+    }
+
+    .round-time-bar[data-style="fixed"] div {
+        width: calc(var(--duration) * 5%);
+
+    }
+
+    .round-time-bar[data-color="blue"] div {
+        background: linear-gradient(to bottom, #64b5f6, #1565c0);
+
+    }
+
+    @keyframes roundtime {
+        to {
+            /* More performant than width */
+            transform: scaleX(0);
+        }
+    }
+</style>
+
+<body>
+    <div class="round-time-bar" data-style="smooth" style="--duration: 30;">
+        <div></div>
+    </div>
+
+
+</body>
+
+<script>
+    const button = document.querySelector("#restart-button");
+    const bars = document.querySelectorAll(".round-time-bar");
+    button.addEventListener("click", () => {
+        bars.forEach((bar) => {
+            bar.classList.remove("round-time-bar");
+            bar.offsetWidth;
+            bar.classList.add("round-time-bar");
+        });
+    });
+</script>
+
+</html>
